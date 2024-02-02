@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TestService } from './test.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Third-Project';
+  
+  
+  constructor(private svc: TestService, private http: HttpClient) {
+    this.svc.printToConsole("Got the Service!!")
+  }
+
+  ngOnInit() {
+    let obs = this.http.get('https://api.github.com/users')
+    obs.subscribe((response) => console.log(response))
+  }
 }
