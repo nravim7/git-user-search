@@ -2,8 +2,10 @@ User name: <input type="text" [(ngModel)]="userName">
 <button (click)="search()">Search</button>
 
 <div *ngIf="response">
-  <p>Login Name: {{response.login}}</p>
+  <p>Login User Name: {{response.login}}</p>
+  <p>Name: {{response.name}}</p>
   <p>Login Id: {{response.id}}</p>
+  <p>Repos: {{response.public_repos}}</p>
   <p>Login location: {{response.location}}</p>
-  <p>Login twitter: {{response.twitter_username}}</p>
+  <p *ngIf="response.twitter_username">Login twitter: {{response.twitter_username}}</p>
 </div>

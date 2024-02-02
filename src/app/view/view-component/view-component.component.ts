@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-component.component.css']
 })
 export class ViewComponentComponent implements OnInit {
-  userName: string = " ";
+  userName: string = "";
   response: any;
 
   constructor(private http: HttpClient) { }
